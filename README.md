@@ -18,7 +18,7 @@
 </div>
 
 
-Simple, extendable base rest client for python. I've rewritten this pattern time after time, figured I would just package it and install.
+Simple, extendable base rest client for python. I've rewritten this pattern time after time, figured I would just package it and install when necessary.
 
 
 * GitHub repo: <https://github.com/nat5142/rest-wrapper.git>
@@ -56,6 +56,7 @@ class SomeApiWrapper(RestClient):
     base_url = 'https://some-api.com/'
 
     def authenticate(self):
+        # authenticate method is invoked at the end of the object intialization.
         self.session.headers.update({
             'X-Api-Key': os.environ['API_KEY']
         })
@@ -65,10 +66,6 @@ client = SomeApiWrapper()
 
 resp = client.get('/api/v1/users')  # will request https://some-api.com/api/v1/users
 ```
-
-## Quickstart
-
-TODO
 
 ## Credits
 
