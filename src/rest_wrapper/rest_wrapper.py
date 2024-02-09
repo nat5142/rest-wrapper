@@ -1,6 +1,7 @@
 """Main module."""
-import requests
 from urllib.parse import urljoin
+
+import requests
 
 
 class RestClient(object):
@@ -11,14 +12,16 @@ class RestClient(object):
 
         To access the common session for all requests, use `self.session`
 
-        :param base_url: _description_
+        :param base_url: base url of resource
         """
-        super(RestClient, self).__init__(*args, **kwargs)
         
         if not hasattr(self, 'base_url') and not base_url:
             raise ValueError('You must provide a `base_url` when you create a RestClient.')
         self.base_url = base_url or self.base_url
         self.session = requests.Session()
+
+        super(RestClient, self).__init__(*args, **kwargs)
+
         self.authenticate()
 
     def authenticate(self):

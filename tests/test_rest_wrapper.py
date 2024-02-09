@@ -1,8 +1,8 @@
 """Tests for `rest_wrapper` module."""
 from typing import Generator
+from unittest import mock
 
 import pytest
-from unittest import mock
 
 import rest_wrapper
 
@@ -15,7 +15,7 @@ def version() -> Generator[str, None, None]:
 
 def test_version(version: str) -> None:
     """Sample pytest test function with the pytest fixture as an argument."""
-    assert version == "0.0.1"
+    assert version == "0.0.2"
 
 
 class MockResponse:
