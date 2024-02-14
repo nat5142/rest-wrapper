@@ -1,7 +1,7 @@
 
 [tool.poetry]
 name = "rest-wrapper"
-version = "0.0.2"
+version = "0.0.3"
 description = "Simple, extendable base rest client for python"
 authors = ["Nick Tulli <ntulli.dev@gmail.com>"]
 
