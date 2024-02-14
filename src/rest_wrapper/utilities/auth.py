@@ -11,7 +11,7 @@ class SimpleAuthMixin(object):
 
     def authenticate(self):
         if self.get_login_first:
-            self.get_login_endpoint()
+            self.login_page = self.get_login_endpoint()
 
         payload_key = 'json' if self.use_json_login else 'data'
         request_kwargs = {
